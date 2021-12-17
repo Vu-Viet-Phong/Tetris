@@ -1,8 +1,5 @@
 package tetris;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 public class GameThread extends Thread {
     private GameArea ga;
     private GameForm gf;
@@ -28,7 +25,7 @@ public class GameThread extends Thread {
             while (ga.moveBlockDown()) {
                 try {
                     Thread.sleep(pause);
-                } catch (InterruptedException ex) {
+                } catch (InterruptedException e) {
                     return;
                 }
             }

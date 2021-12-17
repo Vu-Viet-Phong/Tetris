@@ -1,16 +1,18 @@
 package tetris;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 
 public class StartupForm extends JFrame {
+    private JButton btnLeaderBoard;
+    private JButton btnQuit;
+    private JButton btnStart;
+
     public StartupForm() {
         initComponents();
     }
 
-    @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
         btnStart = new javax.swing.JButton();
         btnLeaderBoard = new javax.swing.JButton();
         btnQuit = new javax.swing.JButton();
@@ -65,26 +67,19 @@ public class StartupForm extends JFrame {
 
         pack();
         setLocationRelativeTo(null);
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
-    private void btnStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStartActionPerformed
+    private void btnStartActionPerformed(java.awt.event.ActionEvent evt) {
         this.setVisible(false);
         Tetris.start();
-    }//GEN-LAST:event_btnStartActionPerformed
+    }
 
-    private void btnLeaderBoardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLeaderBoardActionPerformed
+    private void btnLeaderBoardActionPerformed(java.awt.event.ActionEvent evt) {
         this.setVisible(false);
         Tetris.showLeaderboard();
-    }//GEN-LAST:event_btnLeaderBoardActionPerformed
+    }
 
-    private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitActionPerformed
+    private void btnQuitActionPerformed(java.awt.event.ActionEvent evt) {
         System.exit(0);
-    }//GEN-LAST:event_btnQuitActionPerformed
-
-    
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnLeaderBoard;
-    private javax.swing.JButton btnQuit;
-    private javax.swing.JButton btnStart;
-    // End of variables declaration//GEN-END:variables
+    }
 }
