@@ -14,27 +14,17 @@ public class Tetris {
         gf.startGame();
     }
     
-    public static void showLeaderboard() {
-        lf.setVisible(true);
-    }
-    
-    public static void showStartup() {
-        sf.setVisible(true);
-    }
+    public static void showStartup()     { sf.setVisible(true);   }
+    public static void showLeaderboard() { lf.setVisible(true);   } 
+
+    public static void playClear()       { audio.playClearLine(); }
+    public static void playGameOver()    { audio.playGameOver();  }
     
     public static void gameOver(int score) {
         playGameOver();
         String playerName = JOptionPane.showInputDialog("Game Over!\nPlease enter your name.");
         gf.setVisible(false);
         lf.addPlayer(playerName, score);
-    }
-    
-    public static void playClear() {
-        audio.playClearLine();
-    }
-    
-    public static void playGameOver() {
-        audio.playGameOver();
     }
     
     public static void main(String[] args) {
