@@ -113,10 +113,9 @@ public class LeaderboardForm extends javax.swing.JFrame {
     private void initTableSorter() {
         sorter = new TableRowSorter<>(tm);
         leaderboard.setRowSorter(sorter);
-        
+ 
         ArrayList<SortKey> keys = new ArrayList<>();
         keys.add(new SortKey(1, SortOrder.DESCENDING));
-        
         sorter.setSortKeys(keys);
     }
     
@@ -126,7 +125,6 @@ public class LeaderboardForm extends javax.swing.JFrame {
             ObjectOutputStream os = new ObjectOutputStream(fs);
 
             os.writeObject(tm.getDataVector());
-            
             os.close();
             fs.close();
         } catch(Exception e) {}
