@@ -5,9 +5,7 @@ import java.awt.Graphics;
 import java.util.Random;
 import javax.swing.JPanel;
 import tetrisblocks.*;
-/**
- * @author Vu Viet Phong
- */
+
 public class GameArea extends JPanel{
     private int gridRows;
     private int gridColumns;
@@ -27,13 +25,11 @@ public class GameArea extends JPanel{
         gridCellSize = this.getBounds().width / gridColumns;
         gridRows = this.getBounds().height / gridCellSize;       
         
-        blocks = new TetrisBlock[]{new IShape(),
-                                   new JShape(),
-                                   new LShape(),
-                                   new OShape(),
-                                   new SShape(),
-                                   new TShape(),
-                                   new ZShape()};
+        blocks = new TetrisBlock[]{
+            new IShape(), new JShape(), new LShape(), 
+            new OShape(), new SShape(), new TShape(), 
+            new ZShape()
+        };
     }
    
     public void initBackgroundArray() {
