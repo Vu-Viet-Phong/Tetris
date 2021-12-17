@@ -38,48 +38,7 @@ public class LeaderboardForm extends javax.swing.JFrame {
         initTableSorter();
     }
 
-    private void initTableData() {
-        Vector ci = new Vector();
-        ci.add("Player");
-        ci.add("Score");
-        
-        tm = (DefaultTableModel)leaderboard.getModel();
-        
-        try {
-            FileInputStream fs = new FileInputStream(leaderboardFile);
-            ObjectInputStream os = new ObjectInputStream(fs);
-            
-            tm.setDataVector((Vector<Vector>)os.readObject(), ci);
-            
-            os.close();
-            fs.close();
-        } catch (Exception e) {}
-    }
-    
-    private void initTableSorter() {
-        sorter = new TableRowSorter<>(tm);
-        leaderboard.setRowSorter(sorter);
-        
-        ArrayList<SortKey> keys = new ArrayList<>();
-        keys.add(new SortKey(1, SortOrder.DESCENDING));
-        
-        sorter.setSortKeys(keys);
-    }
-    
-    private void saveLeaderboard() {
-        try {
-            FileOutputStream fs = new FileOutputStream(leaderboardFile);
-            ObjectOutputStream os = new ObjectOutputStream(fs);
-
-            os.writeObject(tm.getDataVector());
-            
-            os.close();
-            fs.close();
-        } catch(Exception e) {}
-    }
-    
     private void initComponents() {
-
         jButton1 = new JButton();
         jScrollPane1 = new JScrollPane();
         leaderboard = new JTable();
@@ -131,6 +90,46 @@ public class LeaderboardForm extends javax.swing.JFrame {
 
         pack();
         setLocationRelativeTo(null);
+    }
+
+    private void initTableData() {
+        Vector ci = new Vector();
+        ci.add("Player");
+        ci.add("Score");
+        
+        tm = (DefaultTableModel)leaderboard.getModel();
+        
+        try {
+            FileInputStream fs = new FileInputStream(leaderboardFile);
+            ObjectInputStream os = new ObjectInputStream(fs);
+            
+            tm.setDataVector((Vector<Vector>)os.readObject(), ci);
+            
+            os.close();
+            fs.close();
+        } catch (Exception e) {}
+    }
+    
+    private void initTableSorter() {
+        sorter = new TableRowSorter<>(tm);
+        leaderboard.setRowSorter(sorter);
+        
+        ArrayList<SortKey> keys = new ArrayList<>();
+        keys.add(new SortKey(1, SortOrder.DESCENDING));
+        
+        sorter.setSortKeys(keys);
+    }
+    
+    private void saveLeaderboard() {
+        try {
+            FileOutputStream fs = new FileOutputStream(leaderboardFile);
+            ObjectOutputStream os = new ObjectOutputStream(fs);
+
+            os.writeObject(tm.getDataVector());
+            
+            os.close();
+            fs.close();
+        } catch(Exception e) {}
     }
 
     private void jButton1ActionPerformed(ActionEvent e) {

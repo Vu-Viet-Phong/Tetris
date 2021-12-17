@@ -11,7 +11,6 @@ public class GameArea extends JPanel{
     private int gridColumns;
     private int gridCellSize;
     private Color[][] background;
-    
     private TetrisBlock block;
     private TetrisBlock[] blocks;
     
