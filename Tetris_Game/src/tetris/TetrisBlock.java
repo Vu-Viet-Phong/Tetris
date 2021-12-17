@@ -4,11 +4,12 @@ import java.awt.Color;
 import java.util.Random;
 
 public class TetrisBlock {
-    private int[][] shape;
-    private Color color;
     private int x, y;
+    private int[][] shape;
     private int[][][] shapes;
     private int currentRotation;
+
+    private Color color;
     private Color[] availableColors = {Color.green, Color.red, Color.blue};
     
     public TetrisBlock(int[][] shape) {
@@ -30,7 +31,7 @@ public class TetrisBlock {
                     shapes[i][y][x] = shape[c - x - 1][y];
                 }
             }
-            
+
             shape = shapes[i];
         }
     }
@@ -52,19 +53,19 @@ public class TetrisBlock {
     public int getY()          { return y;               }
     public void setY(int y)    { this.y = y;             }
     
-    
     public int getHeight()     { return shape.length;    }
     public int getWidth()      { return shape[0].length; }
-    public Color getColor()    { return color;           }
-    public int[][] getShape()  { return shape;           }
-    public int getBottomEdge() { return y + getHeight(); }
+
     public int getLeftEdge()   { return x;               }
     public int getRightEdge()  { return x + getWidth();  }
+    public int getBottomEdge() { return y + getHeight(); }
+
+    public Color getColor()    { return color;           }
+    public int[][] getShape()  { return shape;           }
     
-    // Move
-    public void moveDown()  { y++; }
-    public void moveLeft()  { x--; }
-    public void moveRight() { x++; }
+    public void moveDown()     { y++;                    }
+    public void moveLeft()     { x--;                    }
+    public void moveRight()    { x++;                    }
     
     public void rotate() { 
         currentRotation++;
