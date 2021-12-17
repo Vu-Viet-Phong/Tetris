@@ -14,11 +14,21 @@ public class Tetris {
         gf.startGame();
     }
     
-    public static void showStartup()     { sf.setVisible(true);   }
-    public static void showLeaderboard() { lf.setVisible(true);   } 
+    public static void showStartup() { 
+        sf.setVisible(true);   
+    }
+    
+    public static void showLeaderboard() { 
+        lf.setVisible(true);   
+    } 
 
-    public static void playClear()       { audio.playClearLine(); }
-    public static void playGameOver()    { audio.playGameOver();  }
+    public static void playClear() { 
+        audio.playClearLine(); 
+    }
+
+    public static void playGameOver() { 
+        audio.playGameOver();  
+    }
     
     public static void gameOver(int score) {
         playGameOver();
