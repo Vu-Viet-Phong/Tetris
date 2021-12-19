@@ -6,7 +6,7 @@ import java.util.Random;
 import javax.swing.JPanel;
 import tetrisblocks.*;
 
-public class GameArea extends JPanel{
+public class GameArea extends JPanel {
     private int gridRows;
     private int gridColumns;
     private int gridCellSize;
