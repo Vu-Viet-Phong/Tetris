@@ -5,7 +5,7 @@ public class GameThread extends Thread {
     private GameForm gf;
     private int score;
     private int level = 1;
-    private int scorePerlevel = 3;
+    private int scorePerlevel = 10;
     private int pause = 1000;
     private int speedupPerlevel = 100;
     
