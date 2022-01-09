@@ -14,7 +14,22 @@ public class GameArea extends JPanel {
     private TetrisBlock block;
     private TetrisBlock[] blocks;
     
-   
+    GameArea(JPanel placeholder, int columns) {
+        // placeholder.setVisible(false);
+        this.setBounds(placeholder.getBounds());
+        this.setBackground(placeholder.getBackground());
+        this.setBorder(placeholder.getBorder());
+        
+        gridColumns = columns;
+        gridCellSize = this.getBounds().width / gridColumns;
+        gridRows = this.getBounds().height / gridCellSize;       
+        
+        blocks = new TetrisBlock[] {
+            new IShape(), new JShape(), new LShape(), 
+            new OShape(), new SShape(), new TShape(), 
+            new ZShape()
+        };
+    }
    
    
     public void initBackgroundArray() {
