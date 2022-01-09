@@ -31,6 +31,7 @@ public class GameArea extends JPanel {
         };
     }
    
+   
     public void initBackgroundArray() {
         background = new Color[gridRows][gridColumns];
     }
@@ -279,7 +280,7 @@ public class GameArea extends JPanel {
             }
         }
     }
-    
+   
     private void drawGridSquare(Graphics g, Color color, int x, int y) {
         g.setColor(color);
         g.fillRect(x, y, gridCellSize, gridCellSize);
@@ -287,3 +288,4 @@ public class GameArea extends JPanel {
         g.drawRect(x, y, gridCellSize, gridCellSize);
     }
 }
+    
