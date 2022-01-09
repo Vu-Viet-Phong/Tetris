@@ -26,6 +26,7 @@ public class TetrisBlock {
             int c = shape.length;
             
             shapes[i] = new int[r][c];
+
             for (int y = 0; y < r; y++) {
                 for (int x = 0; x < c; x++) {
                     shapes[i][y][x] = shape[c - x - 1][y];
@@ -36,16 +37,23 @@ public class TetrisBlock {
         }
     }
     
+    /**
+     * 
+     * 
+     * @param gridWidth 
+     */
     public void spawn(int gridWidth) {
         Random r = new Random();
         
+        // Random rotation shape
         currentRotation = r.nextInt(shapes.length);
         shape = shapes[currentRotation];
         
         y = -getHeight();
         x = r.nextInt(gridWidth - getWidth());
         
-        color = availableColors[r.nextInt(availableColors.length)];
+        // Random Color
+        color = availableColors[r.nextInt(availableColors.length)]; 
     }
     
     public int getX()          { return x;               }

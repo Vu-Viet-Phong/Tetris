@@ -7,8 +7,8 @@ import javax.swing.JPanel;
 import tetrisblocks.*;
 
 public class GameArea extends JPanel {
-    private int gridRows;
-    private int gridColumns;
+    private int gridRows; // so luong hang 
+    private int gridColumns; // so luong cot
     private int gridCellSize;
     private Color[][] background;
     private TetrisBlock block;
@@ -37,7 +37,8 @@ public class GameArea extends JPanel {
     
     public void spawnBlock() {
         Random rd = new Random();
-        
+    
+        // Random position
         block = blocks[rd.nextInt(blocks.length)];
         block.spawn(gridColumns);
     }

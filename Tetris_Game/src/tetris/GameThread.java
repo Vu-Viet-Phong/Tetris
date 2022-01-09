@@ -40,6 +40,7 @@ public class GameThread extends Thread {
             gf.updateScore(score);
             
             int lvl = score / scorePerlevel + 1;
+            
             if (lvl > level) {
                 level = lvl;
                 gf.updateLevel(level);

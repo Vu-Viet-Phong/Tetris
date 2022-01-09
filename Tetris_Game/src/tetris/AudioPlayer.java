@@ -32,12 +32,12 @@ public class AudioPlayer {
     }
     
     public void playClearLine() { 
-        clearLineSound.setFramePosition(0);
+        clearLineSound.setFramePosition(0); // bat dau nhac tu vi tri 0
         clearLineSound.start(); 
     }
     
     public void playGameOver() {
-        gameoverSound.setFramePosition(0);
+        gameoverSound.setFramePosition(0); // bat dau nhac tu vi tri 0
         gameoverSound.start();  
     }
 }
