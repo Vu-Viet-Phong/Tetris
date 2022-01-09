@@ -280,5 +280,12 @@ public class GameArea extends JPanel {
             }
         }
     }
-    
+   
+    private void drawGridSquare(Graphics g, Color color, int x, int y) {
+        g.setColor(color);
+        g.fillRect(x, y, gridCellSize, gridCellSize);
+        g.setColor(Color.black);
+        g.drawRect(x, y, gridCellSize, gridCellSize);
+    }
+}
     
